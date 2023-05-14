@@ -1,0 +1,974 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <title>Boa Ação</title>
+    <meta name="generator" content="Eclipse SDK">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="rating" content="mature">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="private">
+    <meta http-equiv="content-language" content="pt-br">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        var SERVIDOR = '/cadastramento/';
+    </script>
+    <script type="text/javascript" src="/cadastramento/js/funcoes.js"></script>
+    <link rel="stylesheet" type="text/css" href="/cadastramento/css/boa.css">
+    <link rel="shortcut icon" href="img/boa1.ico" type="image/x-icon">
+
+    <script type='text/javascript' src="/cadastramento/js/prototype.js"></script>
+    <script type='text/javascript' src="/cadastramento/js/scriptaculous.js?load=effects"></script>
+    <script type='text/javascript' src="/cadastramento/js/prototip.js"></script>
+    <script type='text/javascript' src="/cadastramento/js/identificacaoPJ.js"></script>
+    <script type='text/javascript' src="/cadastramento/js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/prototip.css" />
+
+    <style>
+        body {
+            margin: 0px;
+            padding-top: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            font-family: tahoma;
+            background-color: #FFFFFF;
+            text-align: justify;
+        }
+
+        h4,
+        h5,
+        h6,
+        p,
+        strong,
+        div,
+        acronym,
+        label,
+        td,
+        th,
+        span,
+        a,
+        hr,
+        code,
+        pre,
+        hr {
+            background-repeat: no-repeat;
+        }
+
+        a {
+            font-weight: bold;
+            color: #808080;
+            text-decoration: none;
+        }
+
+        a:visited {
+            font-weight: bold;
+            color: #808080;
+            text-decoration: none;
+        }
+
+        a:active {
+            font-weight: bold;
+            color: #808080;
+            text-decoration: none;
+        }
+
+        a:hover {
+            font-weight: bold;
+            color: #808080;
+            text-decoration: none;
+        }
+
+        /*div#container {
+    margin: 1em auto;
+    width: 95%;
+    padding: 0px;
+    border: 0px #000000;
+}*/
+
+        div.container {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            display: table;
+        }
+
+        div.relatorio {
+            border-right: black 1px;
+            border-top: black 1px;
+            overflow: auto;
+            border-left: black 1px;
+            border-bottom: black 1px;
+        }
+
+        .cabecalho {
+            font-size: 8pt;
+            color: #009900;
+            font-family: arial, verdana;
+            font-weight: bold;
+        }
+
+        .cabecalho:visited {
+            font-size: 8pt;
+            color: #009900;
+            font-family: arial, verdana;
+            font-weight: bold;
+        }
+
+        .cabecalho:active {
+            font-size: 8pt;
+            color: #009900;
+            font-family: arial, verdana;
+            font-weight: bold;
+        }
+
+        .cabecalho:hover {
+            font-size: 8pt;
+            color: #009900;
+            font-family: arial, verdana;
+            font-weight: bold;
+        }
+
+        .cabecalhoGrande {
+            font-family: Arial, Verdana;
+            color: #009900;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .cabecalhoGrande:visited {
+            font-size: 16px;
+            color: #009900;
+            font-family: arial, verdana;
+            font-weight: bold;
+        }
+
+        .cabecalhoGrande:active {
+            font-size: 16px;
+            color: #009900;
+            font-family: arial, verdana;
+            font-weight: bold;
+        }
+
+        .cabecalhoGrande:hover {
+            font-size: 16px;
+            color: #009900;
+            font-family: arial, verdana;
+            font-weight: bold;
+        }
+
+        .footer {
+            /*border-bottom: 2px solid #666666;*/
+            background-color: #666666;
+            color: #FFFFFF;
+            font-family: arial, tahoma, verdana;
+            font-size: xx-small;
+            text-align: right;
+            border-style: none;
+        }
+
+        .aba {
+            font-family: arial, verdana;
+            border-right: black 1px solid;
+            border-top: black 1px solid;
+            border-left: black 1px solid;
+            border-bottom: black 1px solid;
+            background-color: #E2F3B8;
+            font-size: 12px;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        input.submit {
+            border-right: medium none;
+            border-top: medium none;
+            font-size: 12px;
+            background: none transparent scroll repeat 0% 0%;
+            border-left: medium none;
+            border-bottom: medium none;
+            font-family: arial;
+        }
+
+        input.text {
+            border-top: white;
+            border-right: white;
+            border-left: white;
+            border-bottom: white;
+            background-color: white;
+            font-size: 12px;
+            font-family: arial;
+        }
+
+        .formulario {
+            font-size: 9pt;
+            text-transform: none;
+            font-family: tahoma, arial, verdana;
+            border-collapse: collapse;
+            border-top: 1px none #FFFFFF;
+            border-right: 1px none #FFFFFF;
+            border-bottom: 0px solid #ffffff;
+            border-left: 1px none #FFFFFF;
+
+        }
+
+        .formulario a:link {
+            color: #0505A0;
+            letter-spacing: normal;
+            text-decoration: underline;
+        }
+
+        .formulario a:visited {
+            color: #0505A0;
+            letter-spacing: normal;
+            text-decoration: underline;
+        }
+
+        .formulario a:active {
+            color: #006432;
+            letter-spacing: normal;
+            text-decoration: underline;
+        }
+
+        .formulario sub {
+            font-weight: lighter;
+            font-size: 7pt;
+            font-family: tahoma, verdana, arial;
+        }
+
+        .formulario sup {
+            font-weight: lighter;
+            font-size: 7pt;
+            font-family: tahoma, verdana, arial;
+        }
+
+        .table {
+            border: 1px solid #006699;
+            /*background-image: url('../img/fundo_table.jpg');*/
+        }
+
+
+        .formulario th {
+            background-color: #c1e0ff;
+            background-image: url('../img/cadatro_inst_fundo_th.jpg');
+            background-repeat: repeat-y;
+            border-bottom-style: none;
+            border-collapse: collapse;
+            border-left: 1px none #006699;
+            border-right: 1px none #006699;
+            border-top: 1px none #006699;
+            color: black;
+            font-family: tahoma;
+            font-size: 9pt;
+            font-variant: small-caps;
+            font-weight: bolder;
+            line-height: 14pt;
+            text-align: center
+        }
+
+        th.titulo {
+            text-align: left;
+            padding-left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            border: 1px solid #000000;
+        }
+
+        th.subtitulo {
+            text-align: left;
+            padding-left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            border: 1px solid #000000;
+        }
+
+        .formulario td {
+            padding-left: 4px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+            font-size: 13px;
+            padding-bottom: 4px;
+            padding-top: 4px;
+            border: 1px solid #000000;
+            text-align: left;
+            background-color: #ebebeb;
+        }
+
+        /*CSS do Formulario*/
+
+        td.label {
+            text-align: left;
+            width: 22%;
+            height: 20px;
+
+        }
+
+        .formulario input {
+            font-size: 13px;
+            text-transform: none;
+            font-family: tahoma, verdana, arial;
+            border: 1pt solid #000000;
+        }
+
+        .formulario select {
+            font-size: 12px;
+            font-family: tahoma, verdana, arial;
+            border: 1pt solid #666666;
+        }
+
+        .formulario textarea {
+            border-top: #666666 1pt solid;
+            border-left: #666666 1pt solid;
+            border-right: #666666 1pt solid;
+            border-bottom: #666666 1pt solid;
+            font-size: 8pt;
+            text-transform: none;
+            font-family: tahoma, verdana, arial;
+        }
+
+        .formulario button {
+            font-size: 8pt;
+            border: 1pt solid #333333;
+
+        }
+
+        .formulario label {
+            border-right: #669900 1px;
+            border-top: #669900 1px;
+            font-weight: lighter;
+            font-size: 8pt;
+            text-transform: none;
+            border-left: #669900 1px;
+            border-bottom: #669900 1px;
+            font-family: tahoma, verdana, arial;
+            /*margin: 0px;*/
+        }
+
+        .espaco {
+            background-color: transparent;
+            border: 0px solid;
+            border-style: none;
+            height: 8px;
+        }
+
+        .semborda {
+            border-top: medium none;
+            border-right: medium none;
+            border-left: medium none;
+            border-bottom: medium none;
+            font-weight: normal;
+            font-size: 8pt;
+        }
+
+        .botaobusca {
+            font-weight: bolder;
+            height: 18px;
+            background-color: #E0E0E0;
+        }
+
+        .LabelMin {
+            font-weight: lighter;
+            font-size: 7pt;
+            font-family: tahoma, verdana, arial;
+        }
+
+        .desabilitado {
+            background-color: #E0E0E0;
+        }
+
+        .CelulaDestaque {
+            background-color: #FFEE99;
+        }
+
+        .botaoimagempesquisa {
+            font-weight: bolder;
+            font-family: wingdings;
+            height: 18px;
+            background-color: #E0E0E0;
+        }
+    </style>
+
+</head>
+
+
+<body onload="validaAcesso();">
+    <div id="container">
+        <table style="display:block; margin-left:auto; margin-right:auto;" width="760" border="0" cellspacing="0"
+            cellpadding="0">
+            <tr>
+                <td><a href="index.html"><img src="img/boa.png" alt="Boa Ação" style="border-style: none;"></a></td>
+                <td style="width:528px;">&nbsp;</td>
+            </tr>
+        </table>
+
+        <table style="display:block; margin-left:auto; margin-right:auto;" width="760" border="0" cellspacing="0"
+            cellpadding="0">
+        </table>
+        <br>
+        <br>
+
+        <form action='/cadastramento/IdentificacaoPJACT.do' name='form' method='POST'>
+            <div id="divIptHidden" style="display: none;">
+                <input name='metodo' type='hidden' value="aprovacao">
+
+                <input name='pessoa' type='hidden' value="">
+
+                <input name='stValidado' type='hidden' value="N">
+
+                <input name='acessoPermitido' type='hidden' value="">
+
+                <input name='cnpjEmpresaPrivada' type='hidden' value="">
+
+                <input name='cpfResponsavel' type='hidden' value="">
+
+                <input name='categoriaCnesObrigatoria' type='hidden' value="false">
+
+                <input name='coCategoriaHidden' type='hidden' value="J1">
+
+            </div>
+            <table width="760" class="formulario" style="display: table; margin-left: auto; margin-right: auto;">
+                <tbody>
+
+                    <tr>
+                        <th class="titulo" colspan="2">1 - Identifica&ccedil;&atilde;o
+                            da Pessoa Jurídica</th>
+                    </tr>
+                    <tr>
+                        <th class="subtitulo" colspan="2">1.1 - Dados Cadastrais da
+                            Pessoa Jurídica</th>
+                    </tr>
+                    <tr>
+                        <td class="label">CNPJ Mantenedora :</td>
+                        <td>
+
+
+
+
+
+
+
+
+                            <input name='cnpjMantenedora' type='text' value='' onblur="getDadosEmpresa();" size="19"
+                                maxlength="14" activated="true">
+
+
+
+
+
+
+                            Preencha este campo caso não possua CNPJ próprio.
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">CNPJ Pr&oacute;prio :</td>
+                        <td>
+
+
+
+
+
+                            <input name='cnpj' type='text' value='' onblur="isCnpjExistente();" size="19" maxlength="14"
+                                activated="true">
+
+
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Categoria :</td>
+                        <td>
+
+                            <select name='coCategoria' id='coCategoria'
+                                onchange='verificaTipo(); carregarSubtipoInstituicao();'>
+                                <option value="" >-- Selecione --</option>
+                                <option value="J2">Ambulatorio</option>
+                                <option value="A1">Associação</option>
+                                <option value="B1">Banco de células e Tecidos Germinativos</option>
+                                <option value="C1">CIAT</option>
+                                <option value="D1">Doações</option>
+                                <option value="I11">Centro de Orientação de Viajantes</option>
+                                <option value="E2">Estabelecimento de Assistência a Saúde</option>
+                                <option value="J3">Farmacia Publica</option>
+                                <option value="J1">Fundo Municipal</option>
+                                <option value="H3">Hospital</option>
+                                <option value="I9">Laboratório de Análises Clínicas</option>
+                                <option value="I2">Laboratório de saúde pública</option>
+                                <option value="O6">Ministério</option>
+                                <option value="I8">Prefeitura Municipal</option>
+                                <option value="I6">Secretaria Estadual de Saúde</option>
+                                <option value="I7">Secretaria Municipal de Saúde</option>
+                                <option value="J4">Servico de Hemoterapia</option>
+                                <option value="I5">Universidades/centros de pesquisa</option>
+                                <option value="O5">Vigilância epidemiológica</option>
+                                <option value="O2">Visa Estadual</option>
+                                <option value="O4">Visa Municipal</option>
+                                <option value="O3">Visa Regional Estadual</option>
+                            </select>
+
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="label">Nome Institui&ccedil;&atilde;o/Raz&atilde;o
+                            Social *:</td>
+                        <td>
+                            <input name='razaoSocial' type='text' value='' size="50" maxlength="120">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Nome Fantasia *:</td>
+                        <td><input name='nome' type='text' value='' size="50" maxlength="50">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">E-Mail *:</td>
+                        <td><input placeholder="Digite o seu Email" name='email' type='text' value=''
+                                onchange="validarFormatoEmail(this); verificarEmailExistente(this.value);" size="35"
+                                maxlength="80">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div><span class="espaco">&nbsp;</span></div>
+            <table width="760" class="formulario" style="display: none; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <th class="titulo" colspan="2">1 - Identifica&ccedil;&atilde;o
+                            da Institui&ccedil;&atilde;o Mantenedora</th>
+                    </tr>
+                    <tr>
+                        <th class="subtitulo" colspan="2">1.1 - Dados Cadastrais da
+                            Institui&ccedil;&atilde;o Mantenedora <br>
+                            <span style="color:red;">Nao preencha os campos abaixo com os dados da instituição. Informe
+                                os dados do detentor do CNPJ.</span>
+                        </th>
+                    </tr>
+                    <tr>
+
+
+                        <td class="label">CNES :</td>
+                        <td>
+                            <input name='coCnesMantenedora' type='text' value='' onblur="getDadosCNESMantenedora();"
+                                size="14" maxlength="7">
+
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td class="label">Nome Institui&ccedil;&atilde;o/Razao Social
+                            *:</td>
+                        <td><input name='razaoSocialMantenedora' type='text' value='' size="50" maxlength="120">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Nome Fantasia :</td>
+                        <td><input name='nomeFantasiaMantenedora' type='text' value='' size="50" maxlength="50">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Tipo da Institui&ccedil;&atilde;o *:</td>
+                        <td><select name='tipoInstituicaoMantenedora' id='tipoInstituicaoMantenedora'>
+                                <option value=''>-- Selecione --</option>
+                                <option value="J2">Ambulatorio</option>
+                                <option value="A1">Associação</option>
+                                <option value="B1">Banco de células e Tecidos Germinativos</option>
+                                <option value="C1">CIAT</option>
+                                <option value="I10">Centro de Equivalência Farmacêutica e/ou Bioequivalência</option>
+                                <option value="I11">Centro de Orientação de Viajantes</option>
+                                <option value="E2">Estabelecimento de Assistência a Saúde</option>
+                                <option value="J3">Farmacia Publica</option>
+                                <option value="J1">Fundo Municipal</option>
+                                <option value="H3">Hospital</option>
+                                <option value="I9">Laboratório de Análises Clínicas</option>
+                                <option value="I2">Laboratório de saúde pública</option>
+                                <option value="O6">Ministério</option>
+                                <option value="I8">Prefeitura Municipal</option>
+                                <option value="I6">Secretaria Estadual de Saúde</option>
+                                <option value="I7">Secretaria Municipal de Saúde</option>
+                                <option value="J4">Servico de Hemoterapia</option>
+                                <option value="I5">Universidades/centros de pesquisa</option>
+                                <option value="O5">Vigilância epidemiológica</option>
+                                <option value="O2">Visa Estadual</option>
+                                <option value="O4">Visa Municipal</option>
+                                <option value="O3">Visa Regional Estadual</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">E-Mail *:</td>
+                        <td><input name='emailMantenedora' type='text' value=''
+                                onblur="validarFormatoEmail(this); verificarEmailExistente(this.value);" size="35"
+                                maxlength="80">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Logradouro *:</td>
+                        <td><input name='logradouroMantenedora' type='text' value='' size="60" maxlength="60">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Bairro *:</td>
+                        <td><input name='bairroMantenedora' type='text' value='' size="30" maxlength="30">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">CEP *:</td>
+                        <td><input name='cepMantenedora' type='text' value=''
+                                onblur="formataInteiro(this, 10); ValidaCep(this)" onkeypress=" MascaraCep(this);"
+                                size="10" maxlength="10">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">UF *:</td>
+                        <td><select name='ufMantenedora' id='ufMantenedora' onchange='reload();'>
+                                <option value=''>-- Selecione --</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AM">AM</option>
+                                <option value="AP">AP</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="EX">EX</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MG">MG</option>
+                                <option value="MS">MS</option>
+                                <option value="MT">MT</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="PR">PR</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="RS">RS</option>
+                                <option value="SC">SC</option>
+                                <option value="SE">SE</option>
+                                <option value="SP">SP</option>
+                                <option value="TO">TO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Cidade *:</td>
+                        <td><select name='cidadeMantenedora' id='cidadeMantenedora'>
+                                <option value=''>-- Selecione --</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><input type="button" onclick="gravarMantenedora();" value="Gravar"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <div><span class="espaco">&nbsp;</span></div>
+            <table width="760" class="formulario" style="display: flex; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <th class="subtitulo" colspan="2">1.2 - Endere&ccedil;o da
+                            Pessoa Jurídica</th>
+                    </tr>
+                    <tr>
+                        <td class="label">Logradouro *:</td>
+                        <td><input name='logradouro' type='text' value='' size="60" maxlength="60">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Bairro *:</td>
+                        <td><input name='bairro' type='text' value='' size="30" maxlength="30">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">CEP *:</td>
+                        <td><input name='cep' type='text' value='' onblur="formataInteiro(this, 10); " MascaraCep(this);
+                                size="10" maxlength="10">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">UF *:</td>
+                        <td>
+                            <select name='uf' id='uf' onchange='reload();'>
+                                <option value=''>-- Selecione --</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AM">AM</option>
+                                <option value="AP">AP</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="EX">EX</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MG">MG</option>
+                                <option value="MS">MS</option>
+                                <option value="MT">MT</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="PR">PR</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="RS">RS</option>
+                                <option value="SC">SC</option>
+                                <option value="SE">SE</option>
+                                <option value="SP">SP</option>
+                                <option value="TO">TO</option>
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Cidade *:</td>
+                        <td>
+                            <select name='cidade' id='cidade'>
+                                <option value=''>-- Selecione --</option>
+
+                                <option value=''>-- Selecione --</option>
+                                <option value="14">ABREU E LIMA</option>
+                                <option value="35">AFOGADOS DA INGAZEIRA</option>
+                                <option value="39">AFRÂNIO</option>
+                                <option value="41">AGRESTINA</option>
+                                <option value="90">ALAGOINHA</option>
+                                <option value="117">ALIANÇA</option>
+                                <option value="136">ALTINHO</option>
+                                <option value="186">AMARAJI</option>
+                                <option value="233">ANGELIM</option>
+                                <option value="345">ARARIPINA</option>
+                                <option value="300">ARAÇOIABA</option>
+                                <option value="360">ARCOVERDE</option>
+                                <option value="503">BARRA DE GUABIRABA</option>
+                                <option value="538">BARREIROS</option>
+                                <option value="584">BELO JARDIM</option>
+                                <option value="574">BELÉM DE MARIA</option>
+                                <option value="575">BELÉM DE SÃO FRANCISCO</option>
+                                <option value="609">BETÂNIA</option>
+                                <option value="612">BEZERROS</option>
+                                <option value="652">BODOCÓ</option>
+                                <option value="656">BOM CONSELHO</option>
+                                <option value="660">BOM JARDIM</option>
+                                <option value="704">BONITO</option>
+                                <option value="753">BREJINHO</option>
+                                <option value="757">BREJO DA MADRE DE DEUS</option>
+                                <option value="750">BREJÃO</option>
+                                <option value="780">BUENOS AIRES</option>
+                                <option value="783">BUÍQUE</option>
+                                <option value="815">CABO DE SANTO AGOSTINHO</option>
+                                <option value="820">CABROBÓ</option>
+                                <option value="842">CACHOEIRINHA</option>
+                                <option value="859">CAETÉS</option>
+                                <option value="901">CALUMBI</option>
+                                <option value="891">CALÇADO</option>
+                                <option value="910">CAMARAGIBE</option>
+                                <option value="922">CAMOCIM DE SÃO FÉLIX</option>
+                                <option value="986">CAMUTANGA</option>
+                                <option value="1019">CANHOTINHO</option>
+                                <option value="1068">CAPOEIRAS</option>
+                                <option value="1127">CARNAUBEIRA DA PENHA</option>
+                                <option value="1123">CARNAÍBA</option>
+                                <option value="1132">CARPINA</option>
+                                <option value="1136">CARUARU</option>
+                                <option value="1150">CASINHAS</option>
+                                <option value="1172">CATENDE</option>
+                                <option value="1195">CEDRO</option>
+                                <option value="1224">CHÃ DE ALEGRIA</option>
+                                <option value="1225">CHÃ GRANDE</option>
+                                <option value="1333">CONDADO</option>
+                                <option value="1401">CORRENTES</option>
+                                <option value="1403">CORTÊS</option>
+                                <option value="1477">CUMARU</option>
+                                <option value="1484">CUPIRA</option>
+                                <option value="1503">CUSTÓDIA</option>
+                                <option value="1596">DORMENTES</option>
+                                <option value="1669">ESCADA</option>
+                                <option value="1713">EXU</option>
+                                <option value="1740">FEIRA NOVA</option>
+                                <option value="1752">FERNANDO DE NORONHA</option>
+                                <option value="1760">FERREIROS</option>
+                                <option value="1777">FLORES</option>
+                                <option value="1782">FLORESTA</option>
+                                <option value="1839">FREI MIGUELINHO</option>
+                                <option value="1856">GAMELEIRA</option>
+                                <option value="1859">GARANHUNS</option>
+                                <option value="1892">GLÓRIA DO GOITÁ</option>
+                                <option value="1898">GOIANA</option>
+                                <option value="1938">GRANITO</option>
+                                <option value="1943">GRAVATÁ</option>
+                                <option value="2055">IATI</option>
+                                <option value="2076">IBIMIRIM</option>
+                                <option value="2086">IBIRAJUBA</option>
+                                <option value="2124">IGARASSU</option>
+                                <option value="2133">IGUARACI</option>
+                                <option value="2307">ILHA DE ITAMARACÁ</option>
+                                <option value="2163">INAJÁ</option>
+                                <option value="2179">INGAZEIRA</option>
+                                <option value="2214">IPOJUCA</option>
+                                <option value="2222">IPUBI</option>
+                                <option value="2274">ITACURUBA</option>
+                                <option value="2316">ITAMBÉ</option>
+                                <option value="2343">ITAPETIM</option>
+                                <option value="2357">ITAPISSUMA</option>
+                                <option value="2377">ITAQUITINGA</option>
+                                <option value="2289">ITAÍBA</option>
+                                <option value="2433">JABOATÃO DOS GUARARAPES</option>
+                                <option value="2501">JAQUEIRA</option>
+                                <option value="2522">JATAÚBA</option>
+                                <option value="2526">JATOBÁ</option>
+                                <option value="2570">JOAQUIM NABUCO</option>
+                                <option value="2557">JOÃO ALFREDO</option>
+                                <option value="2596">JUCATI</option>
+                                <option value="2612">JUPI</option>
+                                <option value="2619">JUREMA</option>
+                                <option value="2659">LAGOA DO CARRO</option>
+                                <option value="2660">LAGOA DO ITAENGA</option>
+                                <option value="2662">LAGOA DO OURO</option>
+                                <option value="2666">LAGOA DOS GATOS</option>
+                                <option value="2672">LAGOA GRANDE</option>
+                                <option value="2694">LAJEDO</option>
+                                <option value="2742">LIMOEIRO</option>
+                                <option value="2797">MACAPARANA</option>
+                                <option value="2809">MACHADOS</option>
+                                <option value="2849">MANARI</option>
+                                <option value="2887">MARAIAL</option>
+                                <option value="3050">MIRANDIBA</option>
+                                <option value="3135">MOREILÂNDIA</option>
+                                <option value="3137">MORENO</option>
+                                <option value="3212">NAZARÉ DA MATA</option>
+                                <option value="3400">OLINDA</option>
+                                <option value="3419">OROBÓ</option>
+                                <option value="3420">OROCÓ</option>
+                                <option value="3430">OURICURI</option>
+                                <option value="3482">PALMARES</option>
+                                <option value="3500">PALMEIRINA</option>
+                                <option value="3513">PANELAS</option>
+                                <option value="3551">PARANATAMA</option>
+                                <option value="3577">PARNAMIRIM</option>
+                                <option value="3590">PASSIRA</option>
+                                <option value="3613">PAUDALHO</option>
+                                <option value="3620">PAULISTA</option>
+                                <option value="3638">PEDRA</option>
+                                <option value="3710">PESQUEIRA</option>
+                                <option value="3713">PETROLINA</option>
+                                <option value="3712">PETROLÂNDIA</option>
+                                <option value="3854">POMBOS</option>
+                                <option value="3836">POÇÃO</option>
+                                <option value="3988">PRIMAVERA</option>
+                                <option value="4033">QUIPAPÁ</option>
+                                <option value="4038">QUIXABA</option>
+                                <option value="4059">RECIFE</option>
+                                <option value="4096">RIACHO DAS ALMAS</option>
+                                <option value="4113">RIBEIRÃO</option>
+                                <option value="4168">RIO FORMOSO</option>
+                                <option value="4249">SAIRÉ</option>
+                                <option value="4256">SALGADINHO</option>
+                                <option value="4260">SALGUEIRO</option>
+                                <option value="4266">SALOÁ</option>
+                                <option value="4289">SANHARÓ</option>
+                                <option value="4310">SANTA CRUZ</option>
+                                <option value="4314">SANTA CRUZ DA BAIXA VERDE</option>
+                                <option value="4324">SANTA CRUZ DO CAPIBARIBE</option>
+                                <option value="4338">SANTA FILOMENA</option>
+                                <option value="4374">SANTA MARIA DA BOA VISTA</option>
+                                <option value="4380">SANTA MARIA DO CAMBUCÁ</option>
+                                <option value="4428">SANTA TEREZINHA</option>
+                                <option value="4953">SERRA TALHADA</option>
+                                <option value="4965">SERRITA</option>
+                                <option value="4969">SERTÂNIA</option>
+                                <option value="5004">SIRINHAÉM</option>
+                                <option value="5023">SOLIDÃO</option>
+                                <option value="5043">SURUBIM</option>
+                                <option value="4526">SÃO BENEDITO DO SUL</option>
+                                <option value="4536">SÃO BENTO DO UNA</option>
+                                <option value="4547">SÃO CAITANO</option>
+                                <option value="4678">SÃO JOAQUIM DO MONTE</option>
+                                <option value="4687">SÃO JOSÉ DA COROA GRANDE</option>
+                                <option value="4706">SÃO JOSÉ DO BELMONTE</option>
+                                <option value="4715">SÃO JOSÉ DO EGITO</option>
+                                <option value="4623">SÃO JOÃO</option>
+                                <option value="4746">SÃO LOURENÇO DA MATA</option>
+                                <option value="4864">SÃO VICENTE FERRER</option>
+                                <option value="5052">TABIRA</option>
+                                <option value="5058">TACAIMBÓ</option>
+                                <option value="5059">TACARATU</option>
+                                <option value="5073">TAMANDARÉ</option>
+                                <option value="5111">TAQUARITINGA DO NORTE</option>
+                                <option value="5152">TEREZINHA</option>
+                                <option value="5158">TERRA NOVA</option>
+                                <option value="5175">TIMBAÚBA</option>
+                                <option value="5199">TORITAMA</option>
+                                <option value="5208">TRACUNHAÉM</option>
+                                <option value="5236">TRINDADE</option>
+                                <option value="5240">TRIUNFO</option>
+                                <option value="5261">TUPANATINGA</option>
+                                <option value="5266">TUPARETAMA</option>
+                                <option value="5402">VENTUROSA</option>
+                                <option value="5411">VERDEJANTE</option>
+                                <option value="5418">VERTENTE DO LÉRIO</option>
+                                <option value="5419">VERTENTES</option>
+                                <option value="5427">VICÊNCIA</option>
+                                <option value="5477">VITÓRIA DE SANTO ANTÃO</option>
+                                <option value="5502">XEXÉU</option>
+                                <option value="60">ÁGUA PRETA</option>
+                                <option value="64">ÁGUAS BELAS</option>
+                            </select>
+
+
+                        </td>
+                    </tr>
+                    <tr style="border: 1px solid #000000;">
+                        <th colspan="2">
+                            <a href="#"><input type="button" onclick="return gravar();" value="Gravar"></a>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <div><span class="espaco">&nbsp;</span></div>
+
+
+        </form>
+        <br>
+        <br>
+        <br>
+        <table style="display:block; margin-left:auto; margin-right:auto;" width="760" cellspacing="0" cellpadding="0"
+            class="footer">
+            <tbody>
+                <tr>
+                    <td style="border-style: none;"><img src="/cadastramento/img/rodape.gif" alt=""
+                            style="border-style: none;"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+
+<script>
+    if (document.form.pessoa.value != "") {
+        new Tip('ResponsavelLegalID', 'Pessoa investida de poderes legais para praticar atos em nome do Agente Regulado, preposta de gerir ou administrar seus negócios no âmbito da ANVISA', { className: 'tooltip', title: 'Responsável Legal', effect: 'appear', hook: { target: 'topRight', tip: 'bottomLeft' }, offset: { x: 0, y: 0 } });
+        new Tip('GestorID', 'O Gestor de Segurança terá privilégios de acesso ao Sistema de Segurança da ANVISA para cadastrar os usuários da Instituição que também terão acesso aos sistemas de informação disponibilizados.', { className: 'tooltip', title: 'Gestor de Segurança', effect: 'appear', hook: { target: 'topRight', tip: 'bottomLeft' }, offset: { x: 0, y: 0 } });
+    }
+</script>
